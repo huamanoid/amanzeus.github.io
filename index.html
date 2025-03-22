@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMANZEUS</title>
+       <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: "Courier New", Courier, monospace;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .terminal {
+            font-size: 24px;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid white;
+            padding-right: 5px;
+            display: inline-block;
+        }
+
+        .terminal-text {
+            display: inline-block;
+        }
+
+        /* Blinking cursor */
+        @keyframes blink {
+            0% { border-color: transparent; }
+            50% { border-color: white; }
+            100% { border-color: transparent; }
+        }
+
+        .cursor {
+            animation: blink 0.8s step-end infinite;
+        }
+    </style>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+    <div class="terminal">
+        <div class="terminal-text" id="text">Hi.. I am </div><span class="cursor"></span>
+    </div>
+
+    <script>
+        // Optional: Add typing effect here if you want it to appear letter by letter
+        let textElement = document.getElementById("text");
+        let text = "Aman Zeus";
+        let index = 0;
+
+        function typeText() {
+            if (index < text.length) {
+                textElement.innerHTML += text.charAt(index);
+                index++;
+                setTimeout(typeText, 150); // Typing speed
+            }
+        }
+
+        // Start typing effect
+        typeText();
+    </script>
+</body>
+</html>
